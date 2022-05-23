@@ -1,22 +1,20 @@
-# wasm-languages
+# Wasm Languages
 
 ## Overview
 
-## Try it out
+This repository demonstrates how to use [WebAssembly](https://webassembly.org/) in various languages.
+
+Deployment targets are:
+ - Browser with JavaScript interoperability.
+ - Outside of the browser with [WASI](https://wasi.dev/) or [Wasmtime](https://wasmtime.dev/) embedding.
 
 ### Prerequisites
 
-* Prereq 1
-* Prereq 2
-* Prereq 3
+* Install Docker
 
 ### Build & Run
 
-1. Step 1
-2. Step 2
-3. Step 3
-
-## Documentation
+Test it locally using the `run-dev-container.sh` script.
 
 ## Contributing
 
@@ -27,3 +25,4 @@ as an open-source patch. For more detailed information, refer to [CONTRIBUTING.m
 
 ## License
 
+This repository is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).

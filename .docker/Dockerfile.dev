@@ -1,0 +1,15 @@
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
+
+ARG USER
+ARG USER_ID
+ARG USER_GID
+
+USER root
+
+RUN groupmod -g ${USER_GID} gitpod \
+&& usermod -u ${USER_ID} -g ${USER_GID} gitpod
+
+User gitpod
+
+WORKDIR /workspace

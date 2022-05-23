@@ -1,0 +1,23 @@
+[package]
+name = "browser-hello-world"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.80" }
+
+[dependencies.web-sys]
+version = "0.3.57"
+features = [
+    'Window',
+    'Document',
+    'HtmlElement',
+]
+
+[package.metadata.wasm-pack.profile.dev.wasm-bindgen]
+dwarf-debug-info = true
