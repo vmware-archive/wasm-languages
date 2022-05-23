@@ -1,3 +1,8 @@
+
+Copyright (c) 2022 VMware, Inc.				
+
+The Apache 2.0 license (the "License") set forth below applies to all parts of the cloud service broker project. You may not use this file except in compliance with the License.
+
 Apache License 
 
 Version 2.0, January 2004 
@@ -197,3 +202,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
