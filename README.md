@@ -1,3 +1,5 @@
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vmware-wasmstack/wasm-languages)
+
 # Wasm Languages
 
 ## Overview
@@ -8,13 +10,9 @@ Deployment targets are:
  - Browser with JavaScript interoperability.
  - Outside of the browser with [WASI](https://wasi.dev/) or [Wasmtime](https://wasmtime.dev/) embedding.
 
-### Prerequisites
-
-* Install Docker
-
 ### Build & Run
 
-Test it locally using the `run-dev-container.sh` script.
+Test it directly in Gitpod via the dedicated button, or locally using the `run-dev-container.sh` script (Docker required).
 
 ## Contributing
 
