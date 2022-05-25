@@ -12,7 +12,7 @@ Deployment targets are:
 
 ### Build & Run
 
-Test it directly in Gitpod via the dedicated button, or locally using the `run-dev-container.sh` script (Docker required).
+Test it directly in Gitpod via the dedicated button, or locally using the `run-dev-container.sh` script (Docker required). Execute the `run.sh` script (or variants like `run_wasi.sh` or `run_dev.sh`) in each sample directory to run each of them. Web samples are typically served by a web server available at http://localhost:8000/.
 
 ## Contributing
 
