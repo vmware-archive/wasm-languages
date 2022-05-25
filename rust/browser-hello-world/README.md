@@ -1,6 +1,6 @@
 # Rust hello world in a browser
 
-This example leverages [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/examples/without-a-bundler.html) to display a simple hello world in the HTML page.
+This sample leverages [wasm-bindgen](https://rustwasm.github.io/docs/wasm-bindgen/examples/without-a-bundler.html) to display a simple hello world in the HTML page.
 
 Debugging seems currently broken (breakpoints in Rust code not taken in account), but you can at least try watching Rust files in your browser:
  - Open Chrome.

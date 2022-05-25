@@ -1,8 +1,8 @@
 # Rust hello world with WASI
 
-This example displays a simple hello world in the console with [WASI](https://wasi.dev/).
+This sample displays a simple hello world in the console with [WASI](https://wasi.dev/).
 
-You can build the example locally with:
+You can build the sample locally with:
 
 ```
 cargo build --target wasm32-wasi --release

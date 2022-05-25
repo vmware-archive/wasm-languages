@@ -1,13 +1,13 @@
 # Kotlin hello world in V8
 
-This example leverages Kotlin/Wasm and V8 and GC, typed function references and exception handling proposals.
+This sample leverages Kotlin/Wasm and V8 and GC, typed function references and exception handling proposals.
 
 For now, a specific version of V8 is required to make it work. Install [JSVU](https://github.com/GoogleChromeLabs/jsvu) and then install the right V8 version: 
 ```
 jsvu v8@9.2.212
 ```
 
-You can build and run the example locally with:
+You can build and run the sample locally with:
 
 ```
  ./gradlew run
