@@ -7,8 +7,9 @@ ARG USER_GID
 
 USER root
 
-RUN groupmod -g ${USER_GID} gitpod \
-&& usermod -u ${USER_ID} -g ${USER_GID} gitpod
+RUN (groupmod -g ${USER_GID} gitpod \
+&& usermod -u ${USER_ID} -g ${USER_GID} gitpod \
+|| echo "No groupmod needed")
 
 User gitpod
 
