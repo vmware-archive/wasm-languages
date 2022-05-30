@@ -26,4 +26,12 @@ RUN git clone --depth 1 https://github.com/emscripten-core/emsdk.git \
  && ./emsdk install latest \
  && ./emsdk activate latest
 
+RUN wget https://swift.org/builds/swift-5.6.1-release/ubuntu2004/swift-5.6.1-RELEASE/swift-5.6.1-RELEASE-ubuntu20.04.tar.gz \
+ && tar xfz swift-5.6.1-RELEASE-ubuntu20.04.tar.gz \
+ && export PATH="/home/gitpod/swift-5.6.1-RELEASE-ubuntu20.04/usr/bin:${PATH}" \
+ && git clone https://github.com/swiftwasm/carton.git \
+ && cd carton \
+ && swift build -c release \
+ && sudo mv .build/release/carton /usr/bin
+
 ENV PATH="/home/gitpod/emsdk:/home/gitpod/emsdk/upstream/emscripten:${PATH}"
