@@ -32,6 +32,7 @@ RUN wget https://swift.org/builds/swift-5.6.1-release/ubuntu2004/swift-5.6.1-REL
  && git clone https://github.com/swiftwasm/carton.git \
  && cd carton \
  && swift build -c release \
- && sudo mv .build/release/carton /usr/bin
+ && sudo mv .build/release/carton /usr/bin \
+ && rm -rf ../carton
 
 ENV PATH="/home/gitpod/emsdk:/home/gitpod/emsdk/upstream/emscripten:${PATH}"
