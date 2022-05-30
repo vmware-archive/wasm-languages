@@ -1,3 +1,4 @@
 /.gradle
 /.cargo
 m2-repository/
+/.workspace
