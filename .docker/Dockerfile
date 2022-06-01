@@ -35,4 +35,9 @@ RUN wget https://swift.org/builds/swift-5.6.1-release/ubuntu2004/swift-5.6.1-REL
  && sudo mv .build/release/carton /usr/bin \
  && rm -rf ../carton
 
+RUN curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.101 --install-dir dotnet \
+ && cd dotnet \
+ && ./dotnet workload install wasm-tools
+
 ENV PATH="/home/gitpod/emsdk:/home/gitpod/emsdk/upstream/emscripten:${PATH}"
+ENV PATH="/home/gitpod/dotnet:${PATH}"
