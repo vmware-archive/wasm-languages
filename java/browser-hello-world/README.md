@@ -5,7 +5,7 @@ This sample demonstrates how to use [j2cl](https://github.com/google/j2cl) to im
 To launch the browser (you need Chrome unstable):
 
 ```
-$ google-chrome-unstable --js-flags="--experimental-wasm-typed-funcref  --experimental-wasm-gc --experimental-wasm-eh"
+google-chrome-unstable --js-flags="--experimental-wasm-typed-funcref  --experimental-wasm-gc --experimental-wasm-eh"
 ```
 
 Then open http://localhost:8000/jsapp_dev.html.
