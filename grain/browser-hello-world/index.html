@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <script src="node_modules/@grain/js-runner/dist/grain-runner-browser.js"></script>
+    <script>
+      let locator = Grain.defaultURLLocator(['/', 'node_modules/@grain/stdlib']);
+      let GrainRunner = Grain.buildGrainRunner(locator);
+      GrainRunner.runURL('hello.wasm');
+    </script>
+  </head>
+</html>
