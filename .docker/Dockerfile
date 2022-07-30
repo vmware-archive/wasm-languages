@@ -49,5 +49,9 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 
  && cd dotnet \
  && ./dotnet workload install wasm-tools
 
+RUN curl -LO https://github.com/grain-lang/grain/releases/download/grain-v0.5.2/grain-linux-x64 \
+ && sudo mv grain-linux-x64 /usr/local/bin/grain \ 
+ && sudo chmod +x /usr/local/bin/grain
+
 ENV PATH="/home/gitpod/emsdk:/home/gitpod/emsdk/upstream/emscripten:${PATH}"
 ENV PATH="/home/gitpod/dotnet:${PATH}"
