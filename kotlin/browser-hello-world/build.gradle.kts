@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.7.20-dev-1406"
+    kotlin("multiplatform") version "1.8.0-Beta-198" // compatible with Chrome 107.*
 }
 
 version = "1.0-SNAPSHOT"
@@ -21,13 +21,8 @@ kotlin {
                 devServer = KotlinWebpackConfig.DevServer(
                     open = mapOf(
                         "app" to mapOf(
-                            "name" to "google-chrome-unstable",
-                            "arguments" to listOf(
-                                "--js-flags=" +
-                                        "--experimental-wasm-typed-funcref " +
-                                        "--experimental-wasm-gc " +
-                                        "--experimental-wasm-eh"
-                            )
+                            "name" to "google chrome",
+                            "arguments" to listOf("--js-flags=--experimental-wasm-gc")
                         )
                     ),
                     static = devServer?.static,

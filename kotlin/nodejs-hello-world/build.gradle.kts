@@ -1,75 +1,32 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
+
 plugins {
-    kotlin("multiplatform") version "1.7.0-Beta"
+//    kotlin("multiplatform") version "1.7.20" // Compatible with Node 18.12.0 (current LTS)
+    kotlin("multiplatform") version "1.8.0-Beta-198" // Compatible with Node 19.0.0
 }
 
 group = "com.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
 }
 
 kotlin {
     wasm {
         binaries.executable()
         nodejs()
+        d8()
     }
     sourceSets {
         val wasmMain by getting {}
     }
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinCompile<*>>().configureEach {
-    kotlinOptions.freeCompilerArgs += listOf(
-        "-Xwasm-launcher=d8",
-        "-Xwasm-debug-info=false"  // Needed for binaryen
-    )
-}
-val v8: String? by project
-val v8path = v8 ?: (System.getProperty("user.home") + "/.jsvu/v8-9.2.212")
-
-val wasmOpt: String? by project
-val wasmOptPath = wasmOpt ?: "wasm-opt"
-
-val v8flags = arrayOf(
-    "--experimental-wasm-typed-funcref",
-    "--experimental-wasm-gc",
-    "--experimental-wasm-eh",
-    "--wasm-opt",
-)
-
-val run by tasks.registering(Exec::class) {
-    dependsOn(":runOptimizations")
-    executable(v8path)
-    setWorkingDir("$buildDir/js/packages/${project.name}-wasm-opt/kotlin/")
-    args(
-        *v8flags,
-        "--module",
-        "./${project.name}-wasm.js"
-    )
-}
-
-val wasmCopyWasmForOptimizations by tasks.registering(Copy::class) {
-    dependsOn(":compileProductionExecutableKotlinWasm")
-    dependsOn(":wasmProductionExecutableCompileSync")
-    from("$buildDir/js/packages/${project.name}-wasm/")
-    into("$buildDir/js/packages/${project.name}-wasm-opt/")
-}
-
-val runOptimizations by tasks.registering(Exec::class) {
-    dependsOn(wasmCopyWasmForOptimizations)
-    executable(wasmOptPath)
-    setWorkingDir("$buildDir/js/packages/${project.name}-wasm-opt/kotlin/")
-    args(
-        "--enable-nontrapping-float-to-int",
-        "--enable-typed-function-references",
-        "--enable-gc",
-        "--enable-reference-types",
-        "--enable-exception-handling",
-        "../../${project.name}-wasm/kotlin/${project.name}-wasm.wasm", "-o", "./${project.name}-wasm.wasm",
-        "-O3",
-        "--inline-functions-with-loops",
-        "--traps-never-happen",
-        "--fast-math",
-    )
+rootProject.plugins.withType(NodeJsRootPlugin::class.java) {
+//    rootProject.the<NodeJsRootExtension>().nodeVersion = "18.12.0"
+    rootProject.the<NodeJsRootExtension>().nodeVersion = "19.0.0"
 }
