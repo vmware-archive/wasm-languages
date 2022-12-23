@@ -1,11 +1,5 @@
 #!/bin/sh
 
-echo ""
-echo "******************************************************************************"
-echo "* WARNING: make sure to use Chrome Canary (unstable) for this sample.        *"
-echo "******************************************************************************"
-echo ""
-
 set -ex
 
 ./gradlew wasmBrowserDistribution
