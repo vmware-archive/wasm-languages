@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.8.0-RC2"
+    kotlin("multiplatform") version "1.8.0"
 }
 
 version = "1.0-SNAPSHOT"

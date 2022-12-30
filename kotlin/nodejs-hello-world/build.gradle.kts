@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 
 plugins {
-    kotlin("multiplatform") version "1.8.0-RC2" // Compatible with Node 19.0.0
+    kotlin("multiplatform") version "1.8.0" // Compatible with Node 19.0.0
 }
 
 group = "com.example"
