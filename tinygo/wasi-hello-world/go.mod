@@ -1,3 +1,3 @@
 module wasi-hello-world
 
-go 1.18
+go 1.19
