@@ -1,0 +1,1 @@
+zig build -Drelease-small

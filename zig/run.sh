@@ -1,0 +1,1 @@
+node --no-warnings --experimental-wasm-modules index.mjs
