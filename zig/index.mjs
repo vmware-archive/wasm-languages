@@ -1,2 +1,2 @@
-import * as Math from './zig-out/lib/math.wasm';
-console.log(Math.add(3, 2));
+import {add} from './math.wasm';
+console.log(add(3, 2));
