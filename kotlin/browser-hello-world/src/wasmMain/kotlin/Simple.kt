@@ -1,5 +1,4 @@
 import kotlinx.browser.document
-import kotlinx.dom.appendText
 
 fun main() {
     val p = document.createElement("p")

@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 
 plugins {
-    kotlin("multiplatform") version "1.8.0" // Compatible with Node 19.0.0
+    kotlin("multiplatform") version "1.9.0-dev-6976"
 }
 
 group = "com.example"
@@ -10,6 +10,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap")
 }
 
 kotlin {
@@ -24,5 +25,5 @@ kotlin {
 }
 
 rootProject.plugins.withType(NodeJsRootPlugin::class.java) {
-    rootProject.the<NodeJsRootExtension>().nodeVersion = "19.0.0"
+    rootProject.the<NodeJsRootExtension>().nodeVersion = "20.0.0"
 }
