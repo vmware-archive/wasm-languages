@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java/Wasm</title>
+</head>
+<body>
+<script type="application/javascript" src="bytecoderruntime.js"></script>
+<script type="text/javascript">
+    bytecoder.instantiate('bytecoderwasmclasses.wasm')
+        .then(() => {
+            bytecoder.instance.exports.main(null, bytecoder.instance.exports.newObjectArray(null, 0));
+        });
+</script>
+</body>
+</html>
