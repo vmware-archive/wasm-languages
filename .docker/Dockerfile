@@ -53,5 +53,9 @@ RUN curl -LO https://github.com/grain-lang/grain/releases/download/grain-v0.5.2/
  && sudo mv grain-linux-x64 /usr/local/bin/grain \ 
  && sudo chmod +x /usr/local/bin/grain
 
+RUN wget https://github.com/making/bfc/releases/download/0.1.0/bfc-x86_64-pc-linux \
+ && sudo mv bfc-x86_64-pc-linux /usr/local/bin/bfc \
+ && sudo chmod +x /usr/local/bin/bfc
+
 ENV PATH="/home/gitpod/emsdk:/home/gitpod/emsdk/upstream/emscripten:${PATH}"
 ENV PATH="/home/gitpod/dotnet:${PATH}"
